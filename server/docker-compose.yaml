@@ -1,0 +1,33 @@
+version: '3'
+name: "LAP2_challenge"
+services:
+  db:
+    container_name: challenge-db
+    image: postgres:latest
+    volumes:
+      - "./db:/docker-entrypoint-initdb.d/:ro"
+      - "dbdata:/var/lib/postgresql/data"
+    environment: 
+      - POSTGRES_PASSWORD=password
+  api:
+    container_name: challenge-api
+    image: node:slim
+    volumes:
+      - type: bind
+        source: ./api
+        target: /code
+    working_dir: /code
+    ports: 
+      - 3000:3000
+    environment: 
+      - PORT=3000
+      - PGHOST=db
+      - PGUSER=postgres
+      - PGDATABASE=postgres
+      - PGPASSWORD=password
+      - PGPORT=5432
+    depends_on:
+      - db
+    command: bash -c "npm install && npm run start"
+volumes:
+  dbdata:
