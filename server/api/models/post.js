@@ -35,6 +35,36 @@ class Post {
         });
     }
 
+    static findById (id) {
+        return new Promise (async (resolve, reject) => {
+            try {
+                let postData = await db.query(`SELECT * FROM posts WHERE id = $1;`, [ id ]); 
+                let post = new Post(postData.rows[0]);
+                resolve (post);
+            } catch (err) {
+                reject('Owner not found');
+            }
+        });
+    }
+
+
+
+    //delete post
+    destroy(){
+        return new Promise(async(resolve, reject) => {
+            try {
+                const result = await db.query('DELETE FROM posts WHERE id = $1;', [ this.id ]);
+                const post = await Post.findById(result.rows[0]);
+                
+                post.destroy();
+                resolve('Post was deleted')
+ 
+            } catch (err) {
+                reject('Post could not be deleted')
+            }
+        })
+    }
+
 
 
 

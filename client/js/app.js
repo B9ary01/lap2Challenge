@@ -65,7 +65,7 @@ function deletePost(id, li){
         method: 'DELETE',
     };
     fetch(`http://localhost:3000/posts/${id}`, options)
-        .then(li.remove())
+        .then(li.destroy()).then(location.reload(true))
         .catch(console.warn)
 }
 
@@ -88,20 +88,16 @@ function formatPostTr(post, tr){
     const postTd = document.createElement('td');
 
     const delTd = document.createElement('td');
-    const uptTd = document.createElement('td');
 
     const delBtn = document.createElement('button');
-    const uptBtn = document.createElement('button');
+
     delBtn.setAttribute('class', 'delete')
-    uptBtn.setAttribute('class', 'update')
     delBtn.textContent = 'X';
-    uptBtn.textContent = '+';
 
     delBtn.onclick = () => deletePost(post.id, tr);
-    uptBtn.onclick = () => updatePost(post.id, tr);
 
     delTd.append(delBtn);
-    uptTd.append(uptBtn);
+   
 
     titleTd.textContent = post.title
     nameTd.textContent = post.name
@@ -112,7 +108,6 @@ function formatPostTr(post, tr){
     tr.append(postTd)
 
     tr.append(delTd)
-    tr.append(uptTd)
 
     return tr
 }

@@ -11,11 +11,7 @@ body { font-family: 'Quicksand', sans-serif;
     width: 100%;
 }
 
-#content {
-    width: 60vw;
-    margin: 0 auto;
-    text-align: center;
-}
+
 
 button { background-color: rgba(150, 34, 50, 0.4); }
 
@@ -35,10 +31,9 @@ justify-content: center;
 flex-wrap: wrap;}
 
 .delete { color: red; }
-.update { color: green; }
 
 
-tr{ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+tr{ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
     
     margin: auto;
     text-align: center;
@@ -48,6 +43,6 @@ tr{ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     justify-content: center;
     font-family: arial; 
 
-width: 30%;
+width: 50%;
 margin: 15px;
 }
