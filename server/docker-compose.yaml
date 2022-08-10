@@ -5,8 +5,8 @@ services:
     container_name: challenge-db
     image: postgres:latest
     volumes:
-      - "./db:/docker-entrypoint-initdb.d/:ro"
       - "dbdata:/var/lib/postgresql/data"
+      - "./db:/docker-entrypoint-initdb.d/:ro"
     environment: 
       - POSTGRES_PASSWORD=password
   api:

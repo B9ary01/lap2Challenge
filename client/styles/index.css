@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+
+* { box-sizing: border-box; }
+
+body { font-family: 'Quicksand', sans-serif; }
+
+#content {
+    width: 60vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+button { background-color: rgba(150, 34, 50, 0.4); }
+
+input { background-color: rgba(200, 50, 200, 0.4); }
+
+button, input {
+    border: none;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 5px 15px;
+}
+
+table { width: 100%; }
+
+.delete { color: red; }
+.update { color: green; }

@@ -16,6 +16,7 @@ async function create (req, res) {
     try {
         const post = await Post.create(req.body.title, req.body.name, req.body.post);
         res.status(201).json(post);
+    
     } catch (err) {
         res.status(422).json({err})
     }
