@@ -2,7 +2,14 @@
 
 * { box-sizing: border-box; }
 
-body { font-family: 'Quicksand', sans-serif; }
+body { font-family: 'Quicksand', sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1612404748636-568ca4155994?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2t5JTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.8;
+    width: 100%;
+}
 
 #content {
     width: 60vw;
@@ -21,7 +28,26 @@ button, input {
     padding: 5px 15px;
 }
 
-table { width: 100%; }
+table { 
+   
+display: flex;
+justify-content: center;
+flex-wrap: wrap;}
 
 .delete { color: red; }
 .update { color: green; }
+
+
+tr{ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    font-family: arial; 
+
+width: 30%;
+margin: 15px;
+}
